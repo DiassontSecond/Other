@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Киця, я тебе люблю❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="heart-container">
+    <canvas id="heartCanvas" data-canvas="heart"></canvas>
+    <div class="photo-frame">
+        <img class="photo" src="Img/photo1.jpg" alt="Photo">
+        <img class="photo" src="Img/photo2.jpg" alt="Photo">
+        <img class="photo" src="Img/photo3.jpg" alt="Photo">
+        <img class="photo" src="Img/photo4.jpg" alt="Photo">
+        <img class="photo" src="Img/photo5.jpg" alt="Photo">
+        <img class="photo" src="Img/photo6.jpg" alt="Photo">
+        <img class="photo" src="Img/photo7.jpg" alt="Photo">
+        <img class="photo" src="Img/photo8.jpg" alt="Photo">
+        <img class="photo" src="Img/photo9.jpg" alt="Photo">
+        <img class="photo" src="Img/photo10.jpg" alt="Photo">
+        <img class="photo" src="Img/photo11.jpg" alt="Photo">
+        <img class="photo" src="Img/photo12.jpg" alt="Photo">
+    </div>
+  </div>
+  <audio id="background-music" loop>
+    <source src="Lonely Nights.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const audio = document.getElementById('background-music');
+  
+      // Попробуем запустить музыку при загрузке страницы
+      audio.play().catch(error => {
+        console.error('Autoplay was prevented:', error);
+  
+        // Если автовоспроизведение заблокировано, попробуем запустить музыку после взаимодействия
+        document.addEventListener('click', () => {
+          audio.play().catch(error => {
+            console.error('Playback was prevented after interaction:', error);
+          });
+        }, { once: true });
+      });
+    });
+  </script>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
